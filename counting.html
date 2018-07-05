@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Safe and Easy Passwords</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/favicon.ico">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+<script>
+	var key = "";
+	var challenge = "";
+	var isEntered = false;
+	var vowels = "AEIO";
+	var ansRight = "";
+	var siteNames = ['google' ,'facebook' ,'youtube' ,'baidu' ,'yahoo' ,'amazon' ,'wikipedia' ,'qq' ,'twitter' ,'google' ,'taobao' ,'live' ,'sina' ,'linkedin' ,'yahoo' ,'weibo' ,'ebay' ,'google' ,'yandex' ,'hao123' ,'bing' ,'google' ,'msn' ,'instagram' ,'amazon' ,'aliexpress' ,'google' ,'apple' ,'blogspot' ,'pinterest' ,'ask' ,'wordpress' ,'tmall' ,'google' ,'reddit' ,'google' ,'mail' ,'paypal' ,'onclickads' ,'tumblr' ,'sohu' ,'google' ,'imgur' ,'microsoft' ,'google' ,'imdb' ,'gmw' ,'netflix' ,'fc2' ,'amazon' ,'360' ,'googleadservices' ,'alibaba' ,'stackoverflow' ,'google' ,'google' ,'craigslist' ,'google' ,'tianya' ,'rakuten' ,'amazon' ,'blogger' ,'naver' ,'espn' ,'google' ,'soso' ,'cnn' ,'outbrain' ,'nicovideo' ,'google' ,'dropbox' ,'bbc' ,'flipkart' ,'github' ,'diply' ,'googleusercontent' ,'adcash' ,'xinhuanet' ,'amazon' ,'google' ,'google' ,'ebay' ,'google' ,'popads' ,'dailymotion' ,'pixnet' ,'nytimes' ,'ebay' ,'sogou' ,'booking' ,'bbc' ,'jdsports' ,'163' ,'dailymail' ,'livedoor' ,'adobe' ,'wikia' ,'adnetworkperformance' ,'chase' ,'china' ,'indiatimes' ,'uol' ,'china' ,'coccoc' ,'huffingtonpost' ,'google' ,'alipay' ,'directrev' ,'buzzfeed' ,'dmm' ,'youku' ,'google' ,'amazon' ,'cntv' ,'blogspot' ,'google' ,'google' ,'ameblo' ,'google' ,'amazon' ,'microsoftonline' ,'theguardian' ,'amazonaws' ,'bankofamerica' ,'google' ,'chinadaily' ,'walmart' ,'slideshare' ,'cnet' ,'etsy' ,'daum' ,'yelp' ,'ettoday' ,'globo' ,'twitch' ,'tudou' ,'stackexchange' ,'aol' ,'quora' ,'whatsapp' ,'indeed' ,'flickr' ,'weather' ,'google' ,'tradeadexchange' ,'office' ,'amazon' ,'naver' ,'soundcloud' ,'snapdeal' ,'bp' ,'forbes' ,'wellsfargo' ,'douban' ,'zillow' ,'office365' ,'google' ,'vice' ,'gmail' ,'leboncoin' ,'google' ,'godaddy' ,'ikea' ,'salesforce' ,'vimeo' ,'google' ,'kakaku' ,'detail' ,'target' ,'goo' ,'about' ,'tripadvisor' ,'livejournal' ,'avito' ,'bestbuy' ,'allegro' ,'foxnews' ,'wordpress' ,'feedly' ,'theladbible' ,'themeforest' ,'deviantart' ,'9gag' ,'w3schools' ,'nfl' ,'washingtonpost' ,'nih' ,'wikihow' ,'files' ,'businessinsider' ,'google' ,'skype' ,'gfycat' ,'taboola' ,'telegraph' ,'softonic' ,'google' ,'avg' ,'mozilla' ,'nametests' ,'mediafire' ,'onet' ,'americanexpress' ,'pixiv' ,'mystart' ,'zol' ,'ups' ,'google' ,'people' ,'wix' ,'amazon' ,'homedepot' ,'archive' ,'doorblog' ,'huanqiu' ,'weebly' ,'google' ,'secureserver' ,'usps' ,'google' ,'comcast' ,'akamaihd' ,'force' ,'steamcommunity' ,'wikimedia' ,'bitauto' ,'zhihu' ,'addthis' ,'ndtv' ,'google' ,'google' ,'ebay-kleinanzeigen' ,'mercadolivre' ,'shutterstock' ,'pcgamer' ,'loading-delivery2' ,'terrapops' ,'xywy' ,'detik' ,'ifeng' ,'web' ,'bilibili' ,'tlbb8' ,'google' ,'popcash' ,'github' ,'bild' ,'usatoday' ,'mailchimp' ,'steampowered' ,'sourceforge' ,'orange' ,'answers' ,'hdfcbank' ,'uptodown' ,'fbcdn' ,'gmx' ,'hp' ,'xfinity' ,'speedtest' ,'dmm' ,'varzesh3' ,'google' ,'webmd' ,'wordreference' ,'pconline' ,'google' ,'att' ,'hootsuite' ,'rambler' ,'groupon' ,'stumbleupon' ,'goodreads' ,'life' ,'spiegel' ,'bloomberg' ,'washingtonpost' ,'capitalone' ,'icicibank' ,'blog' ,'youm7' ,'google' ,'caijing' ,'t-online' ,'fedex' ,'google' ,'engadget' ,'haiwainet' ,'amazon' ,'mashable' ,'thesaurus' ,'adidas' ,'spotify' ,'blogfa' ,'nownews' ,'2channel' ,'samsung' ,'wsj' ,'accuweather' ,'watsons' ,'pandora' ,'ign' ,'udn' ,'gsmarena' ,'mama' ,'google' ,'bet365' ,'seznam' ,'paytm' ,'chaoshi' ,'badoo' ,'media' ,'verizonwireless' ,'styletv' ,'mlb' ,'hulu' ,'youth' ,'ebay' ,'abs-cbnnews' ,'google' ,'reuters' ,'dell' ,'livedoor' ,'zendesk' ,'google' ,'rediff' ,'bleacherreport' ,'1688' ,'ijreview' ,'trello' ,'putlocker' ,'twimg' ,'likes' ,'oeeee' ,'onlinesbi' ,'tistory' ,'reference' ,'jabong' ,'rt' ,'google' ,'sahibinden' ,'smzdm' ,'google' ,'quikr' ,'iqiyi' ,'icloud' ,'milliyet' ,'impress' ,'mega' ,'yaolan' ,'ask' ,'macys' ,'google' ,'evernote' ,'infusionsoft' ,'enet' ,'google' ,'haosou' ,'theverge' ,'baike' ,'kickstarter' ,'cbssports' ,'slickdeals' ,'google' ,'kouclo' ,'webce' ,'lady8844' ,'thefreedictionary' ,'kohls' ,'eksisozluk' ,'ebay' ,'liveinternet' ,'oracle' ,'google' ,'babytree' ,'gameforge' ,'google' ,'ebay' ,'hurriyet' ,'4shared' ,'ppomppu' ,'elpais' ,'meetup' ,'repubblica' ,'chinatimes' ,'blogimg' ,'ewt' ,'taleo' ,'teepr' ,'goal' ,'scribd' ,'libero' ,'newegg' ,'photobucket' ,'gizmodo' ,'eastday' ,'lifehacker' ,'marca' ,'olx' ,'yandex' ,'sberbank' ,'neobux' ,'buzzfil' ,'qunar' ,'google' ,'ltn' ,'livedoor' ,'slack' ,'citi' ,'uploaded' ,'ameba' ,'stockstar' ,'vid' ,'time' ,'fiverr' ,'naukri' ,'cloudfront' ,'espncricinfo' ,'lowes' ,'kompas' ,'gap' ,'aparat' ,'cnzz' ,'xe' ,'disqus' ,'techcrunch' ,'independent' ,'xda-developers' ,'retailmenot' ,'pinimg' ,'savefrom' ,'liputan6' ,'hotels' ,'hm' ,'battle' ,'justdial' ,'nbcnews' ,'bhaskar' ,'nordstrom' ,'shopclues' ,'mobile' ,'gmarket' ,'timeanddate' ,'surveymonkey' ,'gamefaqs' ,'autohome' ,'lenovo' ,'corriere' ,'wunderground' ,'rbc' ,'expedia' ,'albawabhnews' ,'tabelog' ,'google'];
+
+	function getChallenge(isFirst){
+	    var index = Math.floor((Math.random() * siteNames.length - 1));
+	    var challenges = siteNames[index].toUpperCase();
+	    var text = document.createElement('div');
+
+	    text.innerHTML = "<div class=\"generate-block__title\">challenge</div><div class=\"generate-block__word\">" + challenges +"</div>";
+	    if (isFirst == 1) {
+	        var prevResponse = document.createElement('div');
+	        prevResponse.innerHTML = "<div class=\"generate-block__title\">response</div><div class=\"generate-block__word\">" + ansRight + "</div>";
+	        var prevChallenge = document.getElementById("challengeDiv").innerHTML;
+	        prevChallenge = prevChallenge.replace("is","was");
+	        document.getElementById("challengeDiv").innerHTML = prevChallenge;
+	        document.getElementById("challengeDiv").appendChild(prevResponse);
+	    }
+	    document.getElementById("challengeDiv").appendChild(text);
+
+	    challenge = challenges;
+
+	}
+
+	function findAnswer(challenge, key, wildcard) {
+	  var answer = "";
+	  var sum = 0;
+	  for (i = 0; i < challenge.length; i++) {
+	    var a = key.indexOf(challenge.charAt(i));
+	    if (a == -1) {
+	      sum = wildcard;
+	    } else {
+	      a = a + 1;
+	      a = a % 10;
+	      sum = a;
+	    }
+	    answer = answer + sum;
+	  }
+	  return answer;
+	}
+
+
+	function respond() {
+	  if (document.getElementById('userWords').style.display == 'block'){
+	    phrase = findLetter();
+	  }else{
+	    phrase = "INSTARMODE";
+	  }
+	   
+	  var wildcard = 4;
+	  ansRight = findAnswer(challenge, phrase, wildcard);
+	  ansRight = ansRight + "aB!";
+	  var ansUser = document.getElementById("inputBoxLf").value;
+	  if(ansRight == ansUser) {
+	        alert("correct");
+	        //document.getElementById('bt').innerHTML = "Ready?";
+	        document.getElementById('inputBoxLf').value = "";
+	        count = 0;
+	        isEntered = false;
+	        getChallenge(1);
+	    } else {
+	      alert("Looking for " + ansRight + ", your response was " + ansUser);
+	      document.getElementById("inputBoxLf").value = ansRight;
+	    }
+	}
+
+	function findLetter(){
+	    var word1 = document.getElementById("firstWord").value;
+	    var word2 = document.getElementById("secondWord").value;
+	    var word3 = document.getElementById("thirdWord").value;
+	    
+	    var words = word1 + word2 + word3;
+	    var wordsString = words.trim();
+	    
+	    for (i = 1; i < 11; i++) {
+	        j = i % 10;
+	       document.getElementById("letter" + j).value = wordsString.charAt(i-1).toUpperCase();  
+	    }
+	    var output = wordsString.toUpperCase();
+	  return output;
+	  
+	}
+
+	function clearTable(){
+	    for (i = 1; i < 11; i++) {
+	         j = i % 10;
+	        document.getElementById("letter" + j).value = '';  
+	    }
+	}
+
+	function clearFields(){
+	    document.getElementById("consonants").value = "";
+	    document.getElementById("firstWord").value = "";
+	    document.getElementById("secondWord").value = "";
+	    document.getElementById("thirdWord").value = "";
+	}
+
+	function showFields() {
+	  btn = document.getElementById("phraseBtn");
+	  btn.disabled = true;
+	  btn.style.display = "none";
+	  txt = document.getElementById("enterPhrase");
+	  txt.style.display = "block";
+	}
+
+</script>	
+<body class="" onload="getChallenge(0)">
+
+	<!-- Header -->
+	<header class="header" id="header">
+		<div class="container header-wrapper">
+			<div class="logo-container">
+				<a href="index.html" class="logo">
+					<img src="img/logo.png" alt="Safe and Easy Passwords">
+				</a>
+			</div>			
+			<nav class="header-menu" id="header-menu-js">
+				<ul>
+					<li>
+						<a href="three-word.html"><span>Three Word</span> 
+							Strategy
+						</a>
+					</li>
+					<li>	
+						<a href="letter-code.html"><span>Letter Code</span>
+							Strategy
+						</a>
+					</li>
+					<li class="active">	
+						<a href="counting.html"><span>Counting</span>
+							Strategy
+						</a>
+					</li>	
+					<li>	
+						<a href="chrome.html">Chrome<br>
+							Strategy
+						</a>
+					</li>
+					<li>	
+						<a href="faq.html">FAQ
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div id="mob-burger" class="mob-burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="mob-menu__bg"></div>
+		</div>
+	</header>
+	<!-- Counting -->
+	<section class="counting" id="counting">
+		<div class="container">
+			<div class="video-block">
+				<div class="video-block__preview">
+                    <a href="https://www.youtube.com/watch?v=Lvx244Olup4" class="video-block__btn popup-js">
+                    </a>
+                    <img src="img/counting-video.jpg" class="img-responsive" alt="video-instruction">
+                </div>
+				<div class="video-block__description Aligner">
+					Click on this video to learn the Counting Strategy in less than 6 minutes!
+				</div>
+			</div>
+			<div class="generate">
+				<div class="generate__description">
+					Practice on Your Own!
+				</div>
+				<div class="generate-block counting__generate_1">
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							Digit Code
+						</div>
+						<div class="generate-block__word">
+							<div class="table-responsive">
+								<table class="generate-block__table">
+									<tr>
+										<td>i</td><td>n</td><td>s</td><td>t</td><td>a</td><td>r</td><td>m</td><td>o</td><td>d</td><td>e</td>
+									</tr>
+									<tr>
+										<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>0</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+					</div>
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							wildcard
+						</div>
+						<div class="generate-block__word">
+							4
+						</div>
+					</div>
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							Special String
+						</div>
+						<div class="generate-block__word">
+							aB!
+						</div>
+					</div>
+
+				</div>
+				<div class="generate-block counting__generate_2">
+					<div class="generate-block__item" id="challengeDiv">
+					
+					</div>	
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							your reponse
+						</div>
+						<div class="generate-block__word">
+							<input id="inputBoxLf" type="text" class="generate-block__input">
+						</div>
+					</div>
+				</div>
+				<div class="generate-block__btn">
+					<button class="btn" onclick="respond('DIESTARYOU')" id="bt">
+						Check
+					</button>
+				</div>
+				<div class="counting__btn">
+					<button class="btn" onclick="document.getElementById('enterPhrase').style.display = 'block'
+  clearTable(); clearFields()" id="phraseBtn">
+						Generate my own digit code
+					</button>
+				</div>
+
+				<div class="generate-key" id="enterPhrase" style="display: none;">
+					<div class="generate-key__description">
+						Choose six consonants (wisely!). If you choose the letters that occur frequently, it's easier to make words with them and they will occure more often in the website names. Here is the letter frequency table for your reference.
+					</div>
+					<div class="generate-key__img">
+						<img src="img/diagram.jpg" alt="diagram" class="img-responsive">
+					</div>
+					<div class="generate-form generate-form_1">
+						<label for="">Type your own choices</label>
+						<input type="text" id="consonants">
+					</div>
+					<div class="generate-key__description">
+						Add the following vowels ( <b>A E I O</b> ) and make two or three words (reorder the words the way you want).
+					</div>
+					<div class="generate-form__wrapper">
+						<div class="generate-form generate-form__word">
+							<label for="">Word #1</label>
+							<input type="text" id="firstWord">
+						</div>
+						<div class="generate-form generate-form__word">
+							<label for="">Word #2</label>
+							<input type="text" id="secondWord">
+						</div>
+						<div class="generate-form generate-form__word">
+							<label for="">Word #3</label>
+							<input type="text" id="thirdWord">
+						</div>
+					</div>
+					<div class="generate-key__btn">
+						<button class="btn" onclick="findLetter(); document.getElementById('userWords').style.display = 'block'; " id="wordBt">
+							Submit my words
+						</button>
+					</div>
+				</div>
+				 				
+			</div>
+
+			<div id="userWords" class="map-key" style="display: none;">
+				<div class="map-key__title">Here is your map</div>
+				<div class="table-responsive map-key__table">
+					<table id="t02">
+	                    <tbody>
+	                    	<tr>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter1"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter2"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter3"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter4"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter5"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter6"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter7"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter8"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter9"></th>
+	                            <th>  <input type="text" maxlength="2" size="2" value="" id="letter0"></th>
+	                        </tr>
+	                        <tr>
+	                            <td> 1 </td>
+	                            <td> 2 </td>
+	                            <td> 3 </td>
+	                            <td> 4 </td>
+	                            <td> 5 </td>
+	                            <td> 6 </td>
+	                            <td> 7 </td>
+	                            <td> 8 </td>
+	                            <td> 9 </td>
+	                            <td> 0 </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	            </div>              
+		     	<div class="map-key__title">
+		         	Use this letter to number mapping to answer the challenge 
+		         </div>       
+				<button class="astext btn" onclick="document.getElementById('inputBoxLf').focus(); document.getElementById('enterPhrase').style.display = 'none'">above</button>
+            </div>
+
+			<div class="instructions">
+				<h2 class="instructions__title h2">
+					Text instructions
+				</h2>
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<div class="mapping-letters">
+							Mapping letters to numbers!
+						</div>
+						<div class="generate-block counting__generate_3">
+							<div class="generate-block__item">
+								<div class="generate-block__title">
+									Select five frequent consonants, e.g.,
+								</div>
+								<div class="generate-block__word">
+									n s t r d m
+								</div>
+							</div>	
+							<div class="generate-block__item">
+								<div class="generate-block__title">
+									Add the five vowels
+								</div>
+								<div class="generate-block__word">
+									<div class="generate-block__word">
+									a e i o
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="generate-block counting__generate_4">
+							<div class="generate-block__item">
+								<div class="generate-block__title">
+									Now you have 10 letters
+								</div>
+								<div class="generate-block__word">
+									n s t r d m a e i o
+								</div>
+							</div>
+						</div>
+						<div class="circle">
+							<div class="circle__description">
+							Write them around a circle (This helps you choose words faster)
+							</div>
+							<img src="img/circle.png" alt="circle" class="circle__img img-responsive">
+						</div>						
+						<div class="generate-block counting__generate_5">
+							<div class="generate-block__item">
+								<div class="generate-block__title">
+									Make two or three words with your letters
+								</div>
+								<div class="generate-block__word">
+									in-star-mode
+								</div>
+							</div>
+						</div>
+						<img src="img/hands.png" alt="circle" class="circle img-responsive">
+						<div class="instructions__list">
+							<ol>
+								<li>
+									Choose a random number between 0 and 9. This is going to be your wildcard, e.g., <b>4</b>
+								</li>
+								<li>
+									Memorize the ending <b>aB!</b> (or one of your choice). This is important to make all of your passwords meet the requirements of different websites.
+								</li>
+							</ol>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="instructions__sub-title">
+							Given a website name, e.g., <i>apple</i>, generate your password as follows:
+						</div>
+						<div class="instructions__list">
+							<ol>
+								<li>
+									Start at the first letter of apple, ( a ).
+								</li>
+								<li>
+									Find the first occurrence of the letter in <b>in-star-mode</b> and output the corresponding number. If the letter is not found in your letter sequence, output the wildcard. This is the first digit of your password. ( <b>a --> 5</b> ).	
+								</li>
+								<li>
+									Repeat on the remaining letters of apple till you reach the end. ( apple --> <b>54440</b> )
+								</li>
+								<li>
+									Attach your ending: apple --> <b>54440aB!</b> This is your password!
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>		 
+			</div>
+
+			<div class="feedback-block">
+				<div class="feedback-block__title">
+					Give us your feedback
+				</div>
+				<div class="feedback-block__sub-title">
+					A few words about your experience in generating passwords
+				</div>
+				<div class="feedback-block__contact">
+                    <div class="feedback-block__btn">
+    						<a class="btn" href="mailto:s.samadi@gmail.com" target="_blank">
+    							Send feedback
+    						</a>
+    					</div>
+				</div>
+			</div>
+			<div id="feedback_popup" class="feedback-popup mfp-hide">
+  				<div class="feedback-popup__title">
+  					Thanks for your feedback
+  				</div>
+			</div>
+		</div>		
+	</section>
+	<!-- Footer -->
+	<footer class="footer" id="footer">
+		<div class="container footer__wrapper">
+			<div class="copyrite">
+				© Safe and Easy Passwords. 2018.
+			</div>
+			<div class="footer__contact">
+				<a href="mailto:s.samadi@gmail.com" target="_blank">
+					Contact Us
+				</a>
+			</div>
+			<div class="channel">
+				<a href="https://www.youtube.com/channel/UCAT2aw30gY0SGrdh04ijwYg" target="_blank">
+					Our Youtube channel
+				</a>
+			</div>
+		</div>
+	</footer>
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>

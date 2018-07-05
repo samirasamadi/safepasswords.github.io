@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Safe and Easy Passwords</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/favicon.ico">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body class="">
+
+	<!-- Header -->
+	<header class="header" id="header">
+		<div class="container header-wrapper">
+			<div class="logo-container">
+				<a href="index.html" class="logo">
+					<img src="img/logo.png" alt="Safe and Easy Passwords">
+				</a>
+			</div>
+			<nav class="header-menu" id="header-menu-js">
+				<ul>
+					<li>
+						<a href="three-word.html"><span>Three Word</span> 
+							Strategy
+						</a>
+					</li>
+					<li class="active">	
+						<a href="letter-code.html"><span>Letter Code</span>
+							Strategy
+						</a>
+					</li>
+					<li>	
+						<a href="counting.html"><span>Counting</span>
+							Strategy
+						</a>
+					</li>	
+					<li>	
+						<a href="chrome.html">Chrome<br>
+							Strategy
+						</a>
+					</li>
+					<li>	
+						<a href="faq.html">FAQ
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div id="mob-burger" class="mob-burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+			<div class="mob-menu__bg"></div>	
+		</div>
+	</header>
+	<section class="letter-code" id="letter-code">
+		<div class="container">
+			<div class="video-block">
+				<div class="video-block__preview">
+                    <a href="https://www.youtube.com/watch?v=DlPIy3WaAH4" class="video-block__btn popup-js">
+                    </a>
+                    <img src="img/lette-code.jpg" class="img-responsive" alt="video-instruction">
+                </div>
+				<div class="video-block__description Aligner">
+					Click on this video to learn the Letter Code Strategy in less than 2 minutes!
+				</div>
+			</div>
+			<!------------------------- Firs Section start--------------------------->
+			<div id="instructions" class="generate">
+				<div class="generate__description">
+					Let's practice this method and generate a couple of passwords!
+				</div>
+				<div class="generate-block letter-code__generate_1">
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							Letter Code
+						</div>
+						<div class="generate-block__word">
+							<div class="table-responsive">
+								<table class="generate-block__table">
+									<tr>
+										<td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td>i</td><td>j</td><td>k</td><td>l</td><td>m</td><td>n</td><td>o</td><td>p</td><td>q</td><td>r</td><td>s</td><td>t</td>
+									</tr>
+									<tr>
+										<td>q</td><td>f</td><td>h</td><td>c</td><td>g</td><td>b</td><td>s</td><td>k</td><td>l</td><td>m</td><td>n</td><td>p</td><td>j</td><td>r</td><td>d</td><td>t</td><td>n</td><td>w</td><td>x</td><td>y</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							Special String
+						</div>
+						<div class="generate-block__word">
+							B7!
+						</div>
+					</div>
+				</div>
+				<div class="generate-block letter-code__generate_2">
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							Website
+						</div>
+						<div class="generate-block__word site-name">
+							amazon
+						</div>
+						<div class="generate-block__word">
+							wikipedia
+						</div>
+					</div>
+					<div class="generate-block__item">
+						<div class="generate-block__title">
+							password
+						</div>
+						<div class="generate-block__word password">
+							<input name="I100" type="text" class="generate-block__input">
+							<span id="I_hint100" class="hint hide"></span>
+						</div>
+						<div class="generate-block__word">
+							<input name="I101" type="text" class="generate-block__input">
+							<span id="I_hint101" class="hint hide"></span>
+						</div>
+					</div>
+				</div>
+				<div class="generate-block__btn">
+					<button class="btn" id="I1_checkButton" onclick="I_eval_1();" >Check</button>
+					<h3 name="I1_try" style="display:none ;color:red"> Try again! </h3>
+				</div>
+				<h3 name = "I1_correct" class="correct" style = "display:none; color:green";> Correct! </h3>
+
+				<div id="amazonhint" class="alert-block alert-block_red">
+					<div class="alert-block__title">
+						For amazon:
+					</div>
+					<div class="alert-block__list">
+						<ol>
+							<li><span><b>a</b></span> goes to <b>q</b></li>
+							<li><span><b>m</b></span> goes to <b>j</b></li>
+							<li><span><b>a</b></span> goes to <b>q</b></li>
+							<li><span><b>z</b></span> does not appear in our word sequence.
+								So we will <span><b>skip it</b></span></li>
+							<li><span><b>o</b></span> goes to <b>d</b></li>
+							<li><span><b>n</b></span> goes to <b>r</b></li>
+							<li>Add the string  <span><b>B7!</b></span></li>
+						</ol>
+						Do similarly for <b> wikipedia </b>
+					</div>
+				</div>
+
+				<div class="alert-correct" id="ending">
+					<div class="alert-title">Correct!</div>
+					<div class="alert-description">
+						Great! You just learned a new strategy for generating secure passwords. In the next page, we will ask you to design such a method for yourself.
+					</div>
+					<button class="btn btn-next" id="I1_nextButton" onclick="gname('instruction1_time').value = tock(); gid('instructions').style.display = 'none'; gid('mapping').style.display = 'block'; tick();">Next</button>
+				</div>
+
+			</div>
+			<!------------------------- Firs Section End--------------------------->
+			<div id="mapping" class="generate" style="display:none;">
+				<div class="row">
+					<div class="col col-lg-10">
+						<h1>Generate your own letrter code.</h1>
+						<p> Press the <i>Random letter</i> button in front of each letter to get a random letter.</p>
+
+
+						<div >
+							<div style="float:left;margin: 5px"><table border="1" class="pw">
+								<tbody><tr><td>a</td><td><input name="map1" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="randomLetter btn" style="display:block" onclick="assign_rand_letter(1)">Random letter</div> </td>
+								</tr>
+								<tr><td>b</td><td><input name="map2" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(2)">Random letter</div> </td>
+								</tr>
+								<tr><td>c</td><td><input name="map3" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(3)">Random letter</div> </td>
+								</tr>
+								<tr><td>d</td><td><input name="map4" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(4)">Random letter</div> </td>
+								</tr>
+								<tr><td>e</td><td><input name="map5" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(5)">Random letter</div> </td>
+								</tr>
+								<tr><td>f</td><td><input name="map6" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(6)">Random letter</div> </td>
+								</tr>
+								<tr><td>g</td><td><input name="map7" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(7)">Random letter</div> </td>
+								</tr>
+								<tr><td>h</td><td><input name="map8" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(8)">Random letter</div> </td>
+								</tr>
+								<tr><td>i</td><td><input name="map9" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(9)">Random letter</div> </td>
+								</tr>
+								<tr><td>j</td><td><input name="map10" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(10)">Random letter</div> </td>
+								</tr>
+								</tbody></table></div>
+							<div style="float:left;margin: 5px"><table border="1" class="pw">
+								<tbody><tr><td>k</td><td><input name="map11" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(11)">Random letter</div> </td>
+								</tr>
+								<tr><td>l</td><td><input name="map12" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(12)">Random letter</div> </td>
+								</tr>
+								<tr><td>m</td><td><input name="map13" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(13)">Random letter</div> </td>
+								</tr>
+								<tr><td>n</td><td><input name="map14" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(14)">Random letter</div> </td>
+								</tr>
+								<tr><td>o</td><td><input name="map15" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(15)">Random letter</div> </td>
+								</tr>
+								<tr><td>p</td><td><input name="map16" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(16)">Random letter</div> </td>
+								</tr>
+								<tr><td>q</td><td><input name="map17" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(17)">Random letter</div> </td>
+								</tr>
+								<tr><td>r</td><td><input name="map18" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(18)">Random letter</div> </td>
+								</tr>
+								<tr><td>s</td><td><input name="map19" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(19)">Random letter</div> </td>
+								</tr>
+								<tr><td>t</td><td><input name="map20" type="text" readonly="true"></td>
+									<td> <div id="nextButton1" class="btn randomLetter" style="display:block" onclick="assign_rand_letter(20)">Random letter</div> </td>
+								</tr>
+								</tbody></table></div>
+						</div>
+
+
+						<div style="clear:left"></div>
+						<br>
+						<button class="btn" id="MapCheckButton" onclick="is_map_full();">Check</button>
+						<button class="btn" id="MapNextButton" style="display:none"  onclick="gname('mapping_t').value = tock(); gid('words').style.display='block'; gid('mapping').style.display = 'none';tick();">Next</button>
+						<h3 name="map_not_full" style="display:none ;color:red"> Letter code is not complete! </h3>
+					</div>
+				</div>
+			</div>
+			<!------------------------- Second Section start--------------------------->
+			<div id="words" class="generate" style="display:none;">
+				<!--<h1>Memorization trick!</h1>-->
+
+				<!--<p>In the last page, you generated a letter code of your own. Here, we teach you a trick for memorizing such a code.</p>-->
+
+				<h3>
+					<iframe width="500" height="280" src="https://www.youtube.com/embed/yd88MFZttvQ" frameborder="0" allowfullscreen=""></iframe>
+				</h3>
+
+				<button class="btn" id="videoConfirm2" onclick="showtext2();">I learned the method!</button>
+
+				<div id="afterVideo2" style="display:none">
+					<ul>
+						<li>Now apply this method to your own letter code.</li>
+
+						<li> <b>Read each row and type the first word that comes to your mind that starts
+							with the left letter and has the right letter as the next consonant.</b></li>
+
+						<li> You will use these words in the next steps of memorization, so be careful about typos.</li>
+					</ul>
+
+					<table>
+						<tbody><tr>
+							<td>
+								<div><table border="1" class="pw">
+									<tbody><tr><td>a</td><td><input name="0_lmap1" type="text" readonly="true"></td>
+										<td> <input name="word1" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"> </td>
+									</tr>
+									<tr><td>b</td><td><input name="0_lmap2" type="text" readonly="true"></td>
+										<td>  <input name="word2" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>c</td><td><input name="0_lmap3" type="text" readonly="true"></td>
+										<td> <input name="word3" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"> </td>
+									</tr>
+									<tr><td>d</td><td><input name="0_lmap4" type="text" readonly="true"></td>
+										<td>  <input name="word4" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>e</td><td><input name="0_lmap5" type="text" readonly="true"></td>
+										<td>  <input name="word5" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>f</td><td><input name="0_lmap6" type="text" readonly="true"></td>
+										<td>  <input name="word6" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>g</td><td><input name="0_lmap7" type="text" readonly="true"></td>
+										<td>  <input name="word7" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>h</td><td><input name="0_lmap8" type="text" readonly="true"></td>
+										<td>  <input name="word8" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>i</td><td><input name="0_lmap9" type="text" readonly="true"></td>
+										<td>  <input name="word9" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>j</td><td><input name="0_lmap10" type="text" readonly="true"></td>
+										<td>  <input name="word10" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									</tbody></table></div>
+							</td>
+
+							<td>
+								<div><table border="1" class="pw" style="margin-left: 10px">
+									<tbody><tr><td>k</td><td><input name="0_lmap11" type="text" readonly="true"></td>
+										<td>  <input name="word11" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>l</td><td><input name="0_lmap12" type="text" readonly="true"></td>
+										<td>  <input name="word12" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>m</td><td><input name="0_lmap13" type="text" readonly="true"></td>
+										<td>  <input name="word13" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>n</td><td><input name="0_lmap14" type="text" readonly="true"></td>
+										<td>  <input name="word14" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>o</td><td><input name="0_lmap15" type="text" readonly="true"></td>
+										<td>  <input name="word15" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>p</td><td><input name="0_lmap16" type="text" readonly="true"></td>
+										<td>  <input name="word16" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>q</td><td><input name="0_lmap17" type="text" readonly="true"></td>
+										<td>  <input name="word17" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>r</td><td><input name="0_lmap18" type="text" readonly="true"></td>
+										<td>  <input name="word18" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>s</td><td><input name="0_lmap19" type="text" readonly="true"></td>
+										<td>  <input name="word19" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									<tr><td>t</td><td><input name="0_lmap20" type="text" readonly="true"></td>
+										<td>  <input name="word20" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off">  </td>
+									</tr>
+									</tbody></table></div>
+							</td>
+						</tr>
+						</tbody></table>
+
+					<div style="clear:left"></div>
+
+					<br>
+
+					<button class="btn" id="wordsCheckButton" onclick="is_words_full();">Check</button>
+
+					<h2 name="words_not_full" style="display:none ;color:red"> Some words are missing! </h2>
+					<button class="btn" id="wordsNextButton" style="display:none" onclick="gname('words_t').value = tock(); gid('memorization1').style.display='block'; gid('words').style.display = 'none';tick(); showaHintMemorization1()">Next</button>
+					<br>
+
+				</div>
+			</div>
+			<!------------------------- Three Section start--------------------------->
+			<div id="memorization1" style="display:none">
+				<h1>Memorization (1/5)</h1>
+
+				<ul>
+					<li> <b>Read each row</b> and </li>
+					<li> <b>Type the elements of each row separated by a space in the last column.</b></li>
+				</ul>
+
+				<table border="1" class="pw">
+					<tbody><tr><td>a</td><td><input name="1_lmap1" type="text" readonly="true"></td><td><input name="1_wmap1" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap1" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td><div name="h_memorization1" class="hint" style="display:none;"></div></td>
+					</tr>
+					<tr><td>b</td><td><input name="1_lmap2" type="text" readonly="true"></td><td><input name="1_wmap2" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap2" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization2" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>c</td><td><input name="1_lmap3" type="text" readonly="true"></td><td><input name="1_wmap3" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap3" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization3" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>d</td><td><input name="1_lmap4" type="text" readonly="true"></td><td><input name="1_wmap4" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap4" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization4" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>e</td><td><input name="1_lmap5" type="text" readonly="true"></td><td><input name="1_wmap5" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap5" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization5" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>f</td><td><input name="1_lmap6" type="text" readonly="true"></td><td><input name="1_wmap6" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap6" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization6" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>g</td><td><input name="1_lmap7" type="text" readonly="true"></td><td><input name="1_wmap7" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap7" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization7" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>h</td><td><input name="1_lmap8" type="text" readonly="true"></td><td><input name="1_wmap8" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap8" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization8" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>i</td><td><input name="1_lmap9" type="text" readonly="true"></td><td><input name="1_wmap9" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap9" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization9" class="hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>j</td><td><input name="1_lmap10" type="text" readonly="true"></td><td><input name="1_wmap10" type="text2" readonly="true"></td>
+						<td><input name="1_lwmap10" type="text3" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_memorization10" class="hint" style="display:none;"></div> </td>
+					</tr>
+					</tbody></table>
+
+				<br>
+				<div id="memcheckButton1" class="btn" onclick="eval_memorization1(); activatehint_memorization1(); ">Check</div>
+
+				<h2 name="memorization_try1" style="display:none ;color:red"> Try again! </h2>
+
+				<div id="memnextButton1" class="btn" style="display:none" onclick="gname('memorization1_t').value = tock(); gid('memorization2').style.display='block'; gid('memorization1').style.display = 'none'; showaHintMemorization2(); tick();">Next</div>
+				<br>
+
+				<!-- <div id="nextButtonTmp" class="buttonlink" style = "display:block" onclick="gid('memorization2').style.display='block'; gid('memorization1').style.display = 'none';">Fast Next</div> -->
+
+			</div>
+			<!------------------------- Four Section start--------------------------->
+			<div id="memorization2" style="display:none">
+				<h1>Memorization (2/5)</h1>
+				<p>
+					Do the same for the second 10 letters of the alphabet.
+				</p>
+
+				<ul>
+					<li><b>Read each row and </b></li>
+					<li><b>Type the elements of each row separated by a space in the last column. </b></li>
+
+				</ul>
+
+				<table border="1" class="pw">
+					<tr><td>k</td><td><input name="1_lmap11" type="text" readOnly=true ></td><td><input name="1_wmap11" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap11" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off" ></td>
+						<td> <div name = "h_memorization11" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>l</td><td><input name="1_lmap12" type="text" readOnly=true ></td><td><input name="1_wmap12" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap12" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization12" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>m</td><td><input name="1_lmap13" type="text" readOnly=true ></td><td><input name="1_wmap13" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap13" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off" ></td>
+						<td> <div name = "h_memorization13" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>n</td><td><input name="1_lmap14" type="text" readOnly=true ></td><td><input name="1_wmap14" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap14" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off" ></td>
+						<td> <div name = "h_memorization14" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>o</td><td><input name="1_lmap15" type="text" readOnly=true ></td><td><input name="1_wmap15" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap15" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization15" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>p</td><td><input name="1_lmap16" type="text" readOnly=true ></td><td><input name="1_wmap16" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap16" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization16" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>q</td><td><input name="1_lmap17" type="text" readOnly=true ></td><td><input name="1_wmap17" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap17" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization17" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>r</td><td><input name="1_lmap18" type="text" readOnly=true ></td><td><input name="1_wmap18" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap18" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization18" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>s</td><td><input name="1_lmap19" type="text" readOnly=true ></td><td><input name="1_wmap19" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap19" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization19" class = "hint" style="display:none;"></div> </td>
+					</tr>
+					<tr><td>t</td><td><input name="1_lmap20" type="text" readOnly=true ></td><td><input name="1_wmap20" type="text2" readOnly=true ></td>
+						<td><input name="1_lwmap20" type="text3" autocorrect="off";
+								   autocomplete = "off";
+								   autocapitalize = "off"></td>
+						<td> <div name = "h_memorization20" class = "hint" style="display:none;"></div> </td>
+					</tr>
+				</table>
+
+
+				<script>set_memorization2();</script>
+
+
+				<br>
+				<div id="memcheckButton2" class="btn" onclick="eval_memorization2(); activatehint_memorization2(); ">Check</div>
+
+				<h2 name="memorization_try2" style="display:none ;color:red"> Try again! </h2>
+
+
+				<div id="memnextButton2" class="btn" style="display:none" onclick="gname('memorization2_t').value = tock(); gid('memorization2').style.display='none'; gid('firstpractice').style.display = 'block';tick();set_practice(); showaHintFirstPractice()">Next</div>
+
+				<!-- <div id="nextButtonTmp" class="buttonlink" style = "display:block" onclick="gid('firstpractice').style.display='block'; gid('memorization2').style.display = 'none';set_practice();showaHintFirstPractice();">Fast Next</div> -->
+
+			</div>
+			<!------------------------- Five Section start--------------------------->
+			<div id="firstpractice" style="display:none;">
+				<h1>Memorization (3/5)</h1>
+
+
+				<p>Now let’s practice your memory! For these tables</p>
+				<ul>
+					<li> <b> Look at the two letters of each row and fill out the missing word </b>
+					</li>
+					<!-- <li><span class="pw"> Remember the rule: the word starts with the left letter and has the middle letter as the next consonant. -->
+
+
+				</ul>
+
+
+				<table border="1" class="pw">
+
+				</table>
+
+
+				<div><table border="1" class="pw">
+
+					<tbody><tr><td>a</td><td><input name="2_lmap1" type="text" readonly="true"></td><td><input name="2_wmap1" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice1" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>b</td><td><input name="2_lmap2" type="text" readonly="true"></td><td><input name="2_wmap2" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice2" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>c</td><td><input name="2_lmap3" type="text" readonly="true"></td><td><input name="2_wmap3" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice3" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>d</td><td><input name="2_lmap4" type="text" readonly="true"></td><td><input name="2_wmap4" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice4" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>e</td><td><input name="2_lmap5" type="text" readonly="true"></td><td><input name="2_wmap5" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice5" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>f</td><td><input name="2_lmap6" type="text" readonly="true"></td><td><input name="2_wmap6" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice6" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>g</td><td><input name="2_lmap7" type="text" readonly="true"></td><td><input name="2_wmap7" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice7" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>h</td><td><input name="2_lmap8" type="text" readonly="true"></td><td><input name="2_wmap8" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice8" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>i</td><td><input name="2_lmap9" type="text" readonly="true"></td><td><input name="2_wmap9" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice9" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>j</td><td><input name="2_lmap10" type="text" readonly="true"></td><td><input name="2_wmap10" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice10" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					</tbody></table></div>
+
+				<div><table border="1" class="pw">
+
+					<tbody><tr><td>k</td><td><input name="2_lmap11" type="text" readonly="true"></td><td><input name="2_wmap11" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice11" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>l</td><td><input name="2_lmap12" type="text" readonly="true"></td><td><input name="2_wmap12" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice12" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>m</td><td><input name="2_lmap13" type="text" readonly="true"></td><td><input name="2_wmap13" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice13" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>n</td><td><input name="2_lmap14" type="text" readonly="true"></td><td><input name="2_wmap14" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice14" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>o</td><td><input name="2_lmap15" type="text" readonly="true"></td><td><input name="2_wmap15" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice15" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>p</td><td><input name="2_lmap16" type="text" readonly="true"></td><td><input name="2_wmap16" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice16" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>q</td><td><input name="2_lmap17" type="text" readonly="true"></td><td><input name="2_wmap17" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice17" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>r</td><td><input name="2_lmap18" type="text" readonly="true"></td><td><input name="2_wmap18" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice18" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>s</td><td><input name="2_lmap19" type="text" readonly="true"></td><td><input name="2_wmap19" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice19" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>t</td><td><input name="2_lmap20" type="text" readonly="true"></td><td><input name="2_wmap20" type="text2" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_practice20" class="hint" style="display:none;"></div> </td>
+					</tr>
+					</tbody></table></div>
+				<div style="clear:left"></div>
+
+
+				<br>
+				<div id="praccheckButton1" style="display:inline-block" class="btn" onclick="eval_practice_1();
+                activateHints_prac1(); ">Check</div>
+
+				<h2 name="prac_try1" style="display:none ;color:red"> Try again! </h2>
+
+				<div id="pracnextButton1" class="btn" style="display:none" onclick="gname('practice1_t').value = tock(); gid('secondpractice').style.display='block'; gid('firstpractice').style.display = 'none'; showaHintSecondPractice(); tick(); ">Next</div>
+
+
+				<!-- <div id="nextButtonTmp" class="buttonlink" style = "display:block" onclick="gid('secondpractice').style.display='block'; gid('firstpractice').style.display = 'none'; showaHintSecondPractice()">Fast Next</div> -->
+
+			</div>
+			<!------------------------- Six Section start--------------------------->
+			<div id="secondpractice" style="display:none;">
+				<h1>Memorization (4/5)</h1>
+
+
+				<p>Awesome! We are one step away from completing the memorization task</p>
+				<ul>
+					<li> Look at the left letter in each row, remember the word, type the letter code.</li>
+				</ul>
+
+				<table border="1" class="pw">
+				</table>
+
+
+				<div><table border="1" class="pw">
+
+					<tbody><tr><td>a</td><td><input name="3_lmap1" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td><div name="h_spractice1" class="hint" style="display:none;"></div></td>
+					</tr>
+
+					<tr><td>b</td><td><input name="3_lmap2" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td><div name="h_spractice2" class="hint" style="display:none;"></div></td>
+					</tr>
+
+					<tr><td>c</td><td><input name="3_lmap3" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice3" class="hint" style="display:none;"></div></td>
+					</tr>
+
+					<tr><td>d</td><td><input name="3_lmap4" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice4" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>e</td><td><input name="3_lmap5" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice5" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>f</td><td><input name="3_lmap6" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice6" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>g</td><td><input name="3_lmap7" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice7" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>h</td><td><input name="3_lmap8" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice8" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>i</td><td><input name="3_lmap9" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice9" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>j</td><td><input name="3_lmap10" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice10" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					</tbody></table></div>
+				<div><table border="1" class="pw">
+
+					<tbody><tr><td>k</td><td><input name="3_lmap11" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice11" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>l</td><td><input name="3_lmap12" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice12" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>m</td><td><input name="3_lmap13" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice13" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>n</td><td><input name="3_lmap14" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice14" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>o</td><td><input name="3_lmap15" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice15" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>p</td><td><input name="3_lmap16" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice16" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>q</td><td><input name="3_lmap17" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice17" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>r</td><td><input name="3_lmap18" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice18" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>s</td><td><input name="3_lmap19" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice19" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>t</td><td><input name="3_lmap20" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_spractice20" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					</tbody></table></div>
+				<div style="clear:left"></div>
+				<br>
+
+				<div id="praccheckButton2" style="display:inline-block" class="btn" onclick="eval_practice_2();
+                activateHints_prac2(); ">Check</div>
+
+				<h2 name="prac_try2" style="display:none ;color:red"> Try again! </h2>
+
+				<div id="pracnextButton2" class="btn" style="display:none" onclick="gname('practice2_t').value = tock(); gid('thirdpractice').style.display='block'; gid('secondpractice').style.display = 'none';showaHintThirdPractice(); tick();">Next</div>
+
+				<br>
+				<!-- <div id="nextButtonSecondPracticeTmp" class="buttonlink" style = "display:block"
+                    onclick = "gid('thirdpractice').style.display='block'; gid('secondpractice').style.display = 'none'; showaHintThirdPractice();">Fast Next</div> -->
+
+			</div>
+			<!------------------------- Six Section start--------------------------->
+			<div id="thirdpractice" style="display:none;">
+				<h1>Memorization (5/5)</h1>
+
+				<ul>
+					<li>Done! You have memorized a letter to letter map! Let’s do a final practice and we are ready to go. Type in the missing letters.</li>
+				</ul>
+
+				<table border="1" class="pw">
+				</table>
+
+
+				<div><table border="1" class="pw">
+
+					<tbody><tr><td>o</td><td><input name="f_lmap1" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td><div name="h_fpractice1" class="hint" style="display:none;"></div></td>
+					</tr>
+
+					<tr><td>b</td><td><input name="f_lmap2" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td><div name="h_fpractice2" class="hint" style="display:none;"></div></td>
+					</tr>
+
+					<tr><td>p</td><td><input name="f_lmap3" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice3" class="hint" style="display:none;"></div></td>
+					</tr>
+
+					<tr><td>d</td><td><input name="f_lmap4" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice4" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>s</td><td><input name="f_lmap5" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice5" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>k</td><td><input name="f_lmap6" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice6" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>g</td><td><input name="f_lmap7" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice7" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>h</td><td><input name="f_lmap8" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice8" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>m</td><td><input name="f_lmap9" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice9" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>t</td><td><input name="f_lmap10" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice10" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					</tbody></table></div>
+				<div><table border="1" class="pw">
+
+					<tbody><tr><td>f</td><td><input name="f_lmap11" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice11" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>l</td><td><input name="f_lmap12" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice12" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>i</td><td><input name="f_lmap13" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice13" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>n</td><td><input name="f_lmap14" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice14" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>a</td><td><input name="f_lmap15" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice15" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>c</td><td><input name="f_lmap16" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice16" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>q</td><td><input name="f_lmap17" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice17" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>r</td><td><input name="f_lmap18" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice18" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>e</td><td><input name="f_lmap19" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice19" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					<tr><td>j</td><td><input name="f_lmap20" type="text" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></td>
+						<td> <div name="h_fpractice20" class="hint" style="display:none;"></div> </td>
+					</tr>
+
+					</tbody></table></div>
+				<div style="clear:left"></div>
+				<br>
+				<h2 name="prac_try3" style="display:none ;color:red"> Try again! </h2>
+
+				<div id="praccheckButton3" style="display:inline-block" class="btn" onclick="eval_practice_3();
+                activateHints_prac3(); ">Check</div>
+
+				<div id="pracnextButton3" class="btn" style="display:none" onclick="gname('practice3_t').value = tock(); gid('specialString').style.display='block'; gid('thirdpractice').style.display = 'none';tick();">Next</div>
+
+				<!-- <div id="nextButtonThirdPracticeTmp" class="buttonlink" style = "display:block";
+                    onclick="gid('specialString').style.display='block'; gid('thirdpractice').style.display = 'none';">Fast Next</div> -->
+			</div>
+			<!------------------------- Six Section start--------------------------->
+			<div id="specialString" style="display:none;" class="container">
+				<h1> Choose a special string</h1>
+
+				<ul>
+					<li>Choose a string that contains an uppercase letter, a number and a special character. You will append this string to all of your passwords.
+						<br>
+						<table>
+							<tbody><tr>
+								<td>
+									<br>
+									<input name="specialStringInput" type="text2" maxlength="10" size="10" placeholder="String">
+								</td>
+							</tr>
+							</tbody></table>
+					</li></ul>
+
+				<div id="spcialCheckButton" class="btn" style="display:inline-block" onclick=" checkSpecialString();">Submit</div>
+
+
+				<div id="specialNextButton" class="btn" style="display:none" onclick=" gname('specialString_time').value = tock(); gid('fun_div').style.display='block'; gid('specialString').style.display = 'none';tick();">Next</div>
+
+			</div>
+			<!------------------------- Six Section start--------------------------->
+			<div id="fun_div" style="display:none;" class="container2">
+
+
+
+				<div id="introMessage" style="display:block">
+					<h1>Try generating passwords</h1>
+					<div class="container3">
+						Let's try this method to generate passwords for a few websites. Try to remember the information that you memorized and type passwords on your own. If you couldn't remember something, click on the hint buttons.
+					</div>
+
+				</div>
+
+				<h2 id="webCounter" style="display:block"></h2>
+
+				<div id="lastTable" style="display:none">
+					<table>
+						<tbody><tr>
+							<td>
+								<table border="1">
+									<tbody><tr><td style="padding: 20px;">Website Name</td><td style="padding: 20px;">Password</td></tr>
+									<tr>
+										<td id="website_name" style="font-size:20px;font-weight:900; padding: 20px;"></td>
+										<td id="password_field" style="padding: 20px;">
+											<textarea class="autoOff" cols="20" name="q0" placeholder="Type password" style="font-size:18px" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q1" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q2" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q3" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q4" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q5" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q6" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q7" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q8" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q9" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q10" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q11" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q12" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q13" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+											<textarea cols="20" name="q14" placeholder="Type password" style="font-size:18px; display:none;" rows="1" autocorrect="off" ;="" autocomplete="off" autocapitalize="off"></textarea>
+
+										</td>
+									</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div id="verify_div"></div>
+							</td>
+						</tr>
+						</tbody></table>
+				</div>
+
+
+
+				<br>
+				<div class="btn" id="eval_button" onclick="eval_click_password();">Begin</div>
+
+				<p>&nbsp;</p>
+
+				<table>
+					<tbody><tr>
+						<td><div class="btn btn-light" style="margin-right: 10px;" onclick="showLetterCode()"> Show letter code </div></td>
+						<td><div class="btn btn-light" onclick="showInstructionsFinalPage()"> Show instructions </div></td>
+					</tr>
+					</tbody></table>
+
+				<br>
+				<br>
+				<br>
+				<div id="InsHintF" style="display:none">
+					<div class="instContainer">
+						<ul>
+							<li> Go over the name of the website letter by letter and type the mapping of each letter. </li>
+							<li> Type the special string.
+
+							</li>
+							<li> Remember that you memorized the map only for the first 20 letters of the alphabet. If you see <font color="red">u,v,w,x,y,z</font> in the website name, just skip to the next letter. </li>
+						</ul>
+					</div>
+
+				</div>
+				<br>
+				<div id="letterCodeHint" style="display:none"  class="container3 pw">
+					<table border="1" class="pw">
+						<tbody><tr>
+							<td>
+								<div> Letter Code</div>
+							</td>
+							<td>
+
+								<table border="1">
+									<tbody><tr>
+										<td>a</td> <td>b</td> <td>c</td> <td>d</td> <td>e</td> <td>f</td> <td>g</td> <td>h</td> <td>i</td> <td>j</td> <td>k</td> <td>l</td> <td>m</td> <td>n</td>
+										<td>o</td> <td>p</td> <td>q</td> <td>r</td> <td>s</td> <td>t</td>
+									</tr>
+
+									<tr>
+										<td><div id="fh_lmap1"></div></td>
+										<td><div id="fh_lmap2"></div></td>
+										<td><div id="fh_lmap3"></div></td>
+										<td><div id="fh_lmap4"></div></td>
+										<td><div id="fh_lmap5"></div></td>
+										<td><div id="fh_lmap6"></div></td>
+										<td><div id="fh_lmap7"></div></td>
+										<td><div id="fh_lmap8"></div></td>
+										<td><div id="fh_lmap9"></div></td>
+										<td><div id="fh_lmap10"></div></td>
+										<td><div id="fh_lmap11"></div></td>
+										<td><div id="fh_lmap12"></div></td>
+										<td><div id="fh_lmap13"></div></td>
+										<td><div id="fh_lmap14"></div></td>
+										<td><div id="fh_lmap15"></div></td>
+										<td><div id="fh_lmap16"></div></td>
+										<td><div id="fh_lmap17"></div></td>
+										<td><div id="fh_lmap18"></div></td>
+										<td><div id="fh_lmap19"></div></td>
+										<td><div id="fh_lmap20"></div></td>
+									</tr>
+									</tbody></table>
+							</td>
+
+						</tr>
+
+						<tr>
+							<td>
+								<div> Special String</div>
+							</td>
+							<td>
+								<div name="specialStringHint"></div>
+							</td>
+						</tr>
+						</tbody></table>
+
+				</div>
+			</div>
+			<!------------------------- Six Section start--------------------------->
+			<div id="feedback" class="alert-feedback" style="display: none">
+				Awesome!! You are all set.
+			</div>
+
+			<div class="instructions">
+				<h2 class="instructions__title h2">
+					Text instructions
+				</h2>
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<div class="instructions__list">
+							<ol>
+								<li>
+									Select a random letter to consonant map for the first 20 letters of the alphabet, e.g.,
+								</li>
+								<li>
+									Memorize your mapping. Click on the video below to learn an easy memorization technique that helps you memorize your mapping in a few minutes.
+									<div class="preview-block">
+										<a href="https://www.youtube.com/watch?v=yd88MFZttvQ" class="preview-block__btn popup-js">
+										</a>
+										<img src="img/lette-code.jpg" class="img-responsive" alt="video-instruction">
+									</div>
+								</li>
+								<li>
+									Memorize the ending <b>B7!</b> (or one of your choice). This is important to make all of your passwords meet the requirements of different websites.
+								</li>
+							</ol>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="instructions__sub-title">
+							Given a website name, e.g., <i>netflix</i>, generate your password as follows:
+						</div>
+						<div class="instructions__list">
+							<ol>
+								<li>
+									Start with the first letter of the website name (n) and find its mapping in your table, (<b>r</b>). Output <b>r</b>. If the letter does not appear in your word sequence, output the wildcard <b>x</b>.
+								</li>
+								<li>
+									The next letter is (e), output <b>g</b>.
+								</li>
+								<li>
+									The next letter is (t), output <b>y</b>.
+								</li>
+								<li>
+									Repeat on the remaining letters of netflix till you reach the end, ( netflix --> <b>rgybpl</b> )
+								</li>
+								<li>
+									Attach your ending: netflix --> <b>rgybplB7!</b>. This is your password!
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<a href="counting.html" class="strategy-block">
+				<div class="strategy-block__container">
+					<div class="strategy-block__text">
+					<span>Go to the next Strategy</span>
+					Counting Strategy
+					</div>
+					<i class="icon icon-arrow-w"></i>
+				</div>
+			</a>
+
+			<div class="feedback-block">
+				<div class="feedback-block__title">
+					Give us your feedback
+				</div>
+				<div class="feedback-block__sub-title">
+					A few words about your experience in generating passwords
+				</div>
+				<div class="feedback-block__contact">
+                    <div class="feedback-block__btn">
+    						<a class="btn" href="mailto:s.samadi@gmail.com" target="_blank">
+    							Send feedback
+    						</a>
+    					</div>
+				</div>
+			</div>
+			<div id="feedback_popup" class="feedback-popup mfp-hide">
+  				<div class="feedback-popup__title">
+  					Thanks for your feedback
+  				</div>
+			</div>
+		</div>		
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer" id="footer">
+		<div class="container footer__wrapper">
+			<div class="copyrite">
+				© Safe and Easy Passwords. 2018.
+			</div>
+			<div class="footer__contact">
+				<a href="mailto:s.samadi@gmail.com" target="_blank">
+					Contact Us
+				</a>
+			</div>
+			<div class="channel">
+				<a href="https://www.youtube.com/channel/UCAT2aw30gY0SGrdh04ijwYg" target="_blank">
+					Our Youtube channel
+				</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<input type="hidden" name="letterCodeHintCount" value="0" />
+	<input type="hidden" name="instHintCount" value="0" />
+
+	<input type="hidden" name="funValue" value="0" />
+	<input type="hidden" name="easinessValue" value="0" />
+	<input type="hidden" name="easinessIncreaseValue" value="0" />
+	<input type="hidden" name="wroteDown" value="0" />
+	<input type="hidden" name="followUpSurveys" value="0" />
+
+	<input type="hidden" name="letterMapString" value="" />
+	<input type="hidden" name="wordMapString" value="">
+	<input type="hidden" name="savedSpecialString" value="">
+
+	<input type="hidden" name="counter" value="0" />
+	<input type="hidden" name="instruction2_time" value="0" />
+
+	<input type="hidden" name="instruction1_time" value="0" />
+	<input type="hidden" name="mapping_t" value="0" />
+	<input type="hidden" name="words_t" value="0" />
+	<input type="hidden" name="memorization1_t" value="0" />
+	<input type="hidden" name="memorization2_t" value="0" />
+	<input type="hidden" name="practice1_t" value="0" />
+	<input type="hidden" name="practice2_t" value="0" />
+	<input type="hidden" name="practice3_t" value="0" />
+	<input type="hidden" name="specialString_time" value="0" />
+	<input type="hidden" name="feedback_time" value="0" />
+
+
+	<input type="hidden" name="q0_time" value="0" />
+	<input type="hidden" name="q1_time" value="0" />
+	<input type="hidden" name="q2_time" value="0" />
+	<input type="hidden" name="q3_time" value="0" />
+	<input type="hidden" name="q4_time" value="0" />
+	<input type="hidden" name="q5_time" value="0" />
+	<input type="hidden" name="q6_time" value="0" />
+	<input type="hidden" name="q7_time" value="0" />
+	<input type="hidden" name="q8_time" value="0" />
+	<input type="hidden" name="q9_time" value="0" />
+	<input type="hidden" name="q10_time" value="0" />
+	<input type="hidden" name="q11_time" value="0" />
+	<input type="hidden" name="q12_time" value="0" />
+	<input type="hidden" name="q13_time" value="0" />
+	<input type="hidden" name="q14_time" value="0" />
+
+
+	<input type="hidden" name="q0_correct" value="0" />
+	<input type="hidden" name="q1_correct" value="0" />
+	<input type="hidden" name="q2_correct" value="0" />
+	<input type="hidden" name="q3_correct" value="0" />
+	<input type="hidden" name="q4_correct" value="0" />
+	<input type="hidden" name="q5_correct" value="0" />
+	<input type="hidden" name="q6_correct" value="0" />
+	<input type="hidden" name="q7_correct" value="0" />
+	<input type="hidden" name="q8_correct" value="0" />
+	<input type="hidden" name="q9_correct" value="0" />
+	<input type="hidden" name="q10_correct" value="0" />
+	<input type="hidden" name="q11_correct" value="0" />
+	<input type="hidden" name="q12_correct" value="0" />
+	<input type="hidden" name="q13_correct" value="0" />
+	<input type="hidden" name="q14_correct" value="0" />
+
+
+
+	<input type="hidden" name="q0_1" value="-1" />
+	<input type="hidden" name="q1_1" value="-1" />
+	<input type="hidden" name="q2_1" value="-1" />
+	<input type="hidden" name="q3_1" value="-1" />
+	<input type="hidden" name="q4_1" value="-1" />
+	<input type="hidden" name="q5_1" value="-1" />
+	<input type="hidden" name="q6_1" value="-1" />
+	<input type="hidden" name="q7_1" value="-1" />
+	<input type="hidden" name="q8_1" value="-1" />
+	<input type="hidden" name="q9_1" value="-1" />
+	<input type="hidden" name="q10_1" value="-1" />
+	<input type="hidden" name="q11_1" value="-1" />
+	<input type="hidden" name="q12_1" value="-1" />
+	<input type="hidden" name="q13_1" value="-1" />
+	<input type="hidden" name="q14_1" value="-1" />
+
+
+
+	<input type="hidden" name="q0_2" value="-1" />
+	<input type="hidden" name="q1_2" value="-1" />
+	<input type="hidden" name="q2_2" value="-1" />
+	<input type="hidden" name="q3_2" value="-1" />
+	<input type="hidden" name="q4_2" value="-1" />
+	<input type="hidden" name="q5_2" value="-1" />
+	<input type="hidden" name="q6_2" value="-1" />
+	<input type="hidden" name="q7_2" value="-1" />
+	<input type="hidden" name="q8_2" value="-1" />
+	<input type="hidden" name="q9_2" value="-1" />
+	<input type="hidden" name="q10_2" value="-1" />
+	<input type="hidden" name="q11_2" value="-1" />
+	<input type="hidden" name="q12_2" value="-1" />
+	<input type="hidden" name="q13_2" value="-1" />
+	<input type="hidden" name="q14_2" value="-1" />
+
+
+	<input type="hidden" name="q0_3" value="-1" />
+	<input type="hidden" name="q1_3" value="-1" />
+	<input type="hidden" name="q2_3" value="-1" />
+	<input type="hidden" name="q3_3" value="-1" />
+	<input type="hidden" name="q4_3" value="-1" />
+	<input type="hidden" name="q5_3" value="-1" />
+	<input type="hidden" name="q6_3" value="-1" />
+	<input type="hidden" name="q7_3" value="-1" />
+	<input type="hidden" name="q8_3" value="-1" />
+	<input type="hidden" name="q9_3" value="-1" />
+	<input type="hidden" name="q10_3" value="-1" />
+	<input type="hidden" name="q11_3" value="-1" />
+	<input type="hidden" name="q12_3" value="-1" />
+	<input type="hidden" name="q13_3" value="-1" />
+	<input type="hidden" name="q14_3" value="-1" />
+
+	<input type="submit" id="submitButton">
+
+	<script src="js/scripts.min.js"></script>
+	<script src="js/letter.js"></script>
+</body>
+</html>

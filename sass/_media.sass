@@ -1,0 +1,193 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+	//Burger
+	.mob-burger
+		display: block
+	//Header
+	.header-menu
+		position: fixed
+		width: 350px
+		height: 100%
+		top: 0
+		right: -100%
+		background: #8fa2f4
+		z-index: 99
+		transition: .5s
+		padding: 40px
+		padding-top: 80px
+		padding-left: 80px
+		ul
+			flex-direction: column
+			li
+				margin-right: 0
+				margin-bottom: 30px
+				&:before
+					display: none
+				a
+					color: $white	
+			.active
+				&:before
+					display: none		
+		&.open
+			right: 0					
+	//Main
+	.main
+		margin-bottom: 100px
+		&__right
+			margin-top: 100px
+			margin-bottom: 60px
+		&__description
+			margin: 100px auto 75px
+	.cards:after
+			margin-top: 100px
+	.video-block
+		&__description
+			margin-left: 25px				
+	//Three-word	
+	.three-word
+	//Letter code
+	.letter-code
+		&__generate_1
+			display: block
+			flex-direction: column						
+// ≥768px
++media-breakpoint-down(sm)
+	//Main
+	.main
+		text-align: center
+		&__title
+			margin: auto
+			margin-bottom: 15px			
+		&__sub-title
+			margin: auto
+			margin-bottom: 30px			
+	.cards:after
+			margin-top: 100px
+	.strategy-block
+		&__container
+			padding: 30px
+			flex-direction: column
+			text-align: center
+		&__text
+			margin-bottom: 10px
+			font-size: 28px
+	.video-block
+		text-align: center
+		flex-direction: column
+		margin: 50px auto
+		&__description
+			margin: auto			
+	.feedback-block
+		&__textarea
+			margin-bottom: 20px
+		&__inputs
+			flex-direction: column
+			align-items: center
+			input
+				max-width: inherit
+				&:first-child
+					margin-bottom: 20px
+// ≥576px
++media-breakpoint-down(xs)
+	.h2
+		font-size: 36px
+	//Header
+	.header-menu
+		width: 100%
+	//Main
+	.main
+		margin-bottom: 50px	
+		&__right
+			margin-top: 50px
+		&__description
+			margin-top: 50px
+	.cards:after
+		margin-top: 50px				
+	.about-us
+		margin-bottom: 50px
+		&__link a
+			font-size: 18px
+	.alert-block
+		padding: 20px
+		&__list
+			text-align: left
+			padding-left: 20px
+
+	.generate
+		text-align: center
+	.generate-block
+		padding: 20px
+		text-align: left
+		display: inline-block
+		flex-direction: column	
+		&__item
+			margin-bottom: 25px
+			&:last-child
+				margin-bottom: 0
+		&__title, &__word
+			margin-bottom: 10px
+			line-height: normal
+		&__word
+			font-size: 18px
+		&__input
+			min-width: inherit
+	//Counting
+	.counting
+		&__generate_1
+			display: block
+	.generate-form__wrapper
+		flex-direction: column
+		align-items: center			
+	//Letter code
+	.letter-code
+		&__generate_1
+			display: block
+		&__generate_2 .site-name
+			margin-bottom: 5px					
+	.instructions
+		margin: 50px auto
+	.strategy-block
+		margin-bottom: 50px	
+	.feedback-block
+		margin-bottom: 50px
+	//Chrome Extension
+	.extension
+		margin-top: 50px
+		margin-bottom: 75px
+	//FAQ
+	.faq
+		margin-top: 50px
+		margin-bottom: 75px							
+	//Footer
+	.footer	
+		&__wrapper
+			flex-direction: column
+		.copyrite
+			margin: auto
+			margin-bottom: 20px
+		&__contact
+			margin: auto
+			margin-bottom: 20px
+		.channel
+			margin: auto		
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
