@@ -1,11 +1,5 @@
 $(function() {
 
-
-
-
-
-
-
     $(function() {
         var backToTop = {
             element: $('#I2_nextButton'),
@@ -51,15 +45,6 @@ $(function() {
 
 	$('.accordion-js .accordion-btn-js').click(function(j) {
 	    var dropDown = $(this).closest('.accordion-item-js').find('.accordion-contant-js');
-
-	    $(this).closest('.accordion-js').find('.accordion-contant-js').not(dropDown).slideUp();
-
-	    if ($(this).hasClass('active')) {
-	        $(this).removeClass('active');
-	    } else {
-	        $(this).closest('.accordion-js').find('.accordion-btn-js.active').removeClass('active');
-	        $(this).addClass('active');
-	    }
 
 	    dropDown.stop(false, true).slideToggle();
 
